@@ -58,7 +58,7 @@ import pickle
 
 # Step 2 - Data collection, assessment and management
 # Reading the dataset from url into pandas dataframe
-features_csv_file = "/Users/aelangovan/CS688_Smart_Farming_AI_model/final_crop_recommendation.csv"
+features_csv_file = "final_crop_recommendation.csv"
 _dataset = pd.read_csv(features_csv_file)
 print(_dataset.shape)
 
@@ -363,21 +363,9 @@ def decision_tree(dataset):
     # print(clf2.predict(X_test))
 
     #save the model in pickle format
+    pickle.dump(clf, open('model.pkl','wb'))
 
-    pickle.dump(clf, open('/Users/aelangovan/CS688_Smart_Farming_AI_model/model.pkl','wb'))
-
-    # pickle.dump(grid_search, open("/Users/aelangovan/CS688_Smart_Farming_AI_model/best_calif.pkl", "wb"))
-    # clf2 = pickle.load(open("/Users/aelangovan/CS688_Smart_Farming_AI_model/best_calif.pkl", "rb"))
-    # joblib.dump(bt, '/Users/aelangovan/CS688_Smart_Farming_AI_model/final_model')
-    # dump(grid_search, '/Users/aelangovan/CS688_Smart_Farming_AI_model/filename.joblib')
-    # clf1 = joblib.load('/Users/aelangovan/CS688_Smart_Farming_AI_model/final_model')
-    # print(clf1.predict(X_test))
-
-# import joblib
 decision_tree(_dataset)
-#
-# clf1 = joblib.load('/Users/aelangovan/CS688_Smart_Farming_AI_model/final_model')
-# print('prediction is ', clf1.predict(X_test))
 
 
 
