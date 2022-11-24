@@ -8,13 +8,10 @@ def index():
     return "Hello world"
 @app.route('/predict',methods=['POST'])
 def predict():
-    n = request.form.get('n')
-    p = request.form.get('p')
-    k = request.form.get('k')
-    temp = request.form.get('temp')
-    humidity = request.form.get('humidity')
-    ph = request.form.get('ph')
-    input_query = np.array([[n,p,k,temp,humidity,ph]])
+    cgpa = request.form.get('cgpa')
+    iq = request.form.get('iq')
+    profile_score = request.form.get('profile_score')
+    input_query = np.array([[cgpa,iq,profile_score]])
     result = model.predict(input_query)[0]
     return jsonify({'placement':str(result)})
 if __name__ == '__main__':
