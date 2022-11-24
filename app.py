@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify
 import numpy as np
 import pickle
-model = pickle.load(open('/Users/aelangovan/CS688_Smart_Farming_AI_model/model.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
