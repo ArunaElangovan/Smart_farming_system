@@ -1,4 +1,4 @@
 
 flask
 numpy
-pickle
+pickle=0.0.12
